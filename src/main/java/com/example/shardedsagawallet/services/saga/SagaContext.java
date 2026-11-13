@@ -30,8 +30,8 @@ public class SagaContext {
         return value instanceof Number ? ((Number) value).longValue() : null; // Safely retrieve a Long value from the context, returning null if the value is not of type Long
     }
 
-    public String getBigDecimal(String key) {
+    public BigDecimal getBigDecimal(String key) {
         Object value = data.get(key);
-        return value instanceof Number ? BigDecimal.valueOf(((Number) value).doubleValue()).toString() : null; // Safely retrieve a BigDecimal value from the context, returning null if the value is not of type BigDecimal
+        return value instanceof Number ? BigDecimal.valueOf(((Number) value).doubleValue()) : null; // Safely retrieve a BigDecimal value from the context, returning null if the value is not of type BigDecimal
     }
 }
