@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: shardedsagawallet
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+        dialect: org.hibernate.dialect.MySQLDialect
+  
+
+  datasource:
+    url: jdbc:shardingsphere:classpath:sharding.yml
+    driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
